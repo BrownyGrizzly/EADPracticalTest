@@ -1,0 +1,19 @@
+<h1>Students List</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Student Code</th>
+      <th>Full Name</th>
+      <th>Address</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.studentCode }}</td>
+      <td>{{ student.fullName }}</td>
+      <td>{{ student.address }}</td>
+      <td><button (click)="viewScores(student.studentId)">View Scores</button></td>
+    </tr>
+  </tbody>
+</table>
