@@ -1,5 +1,6 @@
 package com.example.studentinformation.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,20 +12,25 @@ public class StudentScore {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "student_score_id")
+    @JsonProperty("student_score_id")
     private int studentScoreId;
 
-    @ManyToOne
-    @JoinColumn(name = "student_id")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "student_id", nullable = false)
+    @JsonProperty("student")
     private Student student;
 
-    @ManyToOne
-    @JoinColumn(name = "subject_id")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "subject_id", nullable = false)
+    @JsonProperty("subject")
     private Subject subject;
 
-    @Column(name = "score1")
+    @Column(name = "score1", nullable = false)
+    @JsonProperty("score1")
     private double score1;
 
-    @Column(name = "score2")
+    @Column(name = "score2", nullable = false)
+    @JsonProperty("score2")
     private double score2;
 
     public String getGrade() {
