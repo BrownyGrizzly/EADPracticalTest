@@ -1,13 +1,17 @@
 package com.example.studentinformation.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "student_t")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Student {
 
     @Id
@@ -23,7 +27,4 @@ public class Student {
 
     @Column(name = "address")
     private String address;
-
-    public Student(Long studentId) {
-    }
 }

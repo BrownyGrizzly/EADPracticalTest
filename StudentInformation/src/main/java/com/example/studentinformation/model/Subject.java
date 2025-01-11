@@ -1,13 +1,17 @@
 package com.example.studentinformation.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "subject_t")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Subject {
 
     @Id
@@ -23,5 +27,4 @@ public class Subject {
 
     @Column(name = "credit")
     private int credit;
-
 }

@@ -1,13 +1,17 @@
 package com.example.studentinformation.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "student_score_t")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class StudentScore {
 
     @Id
@@ -35,9 +39,5 @@ public class StudentScore {
         if (grade >= 6.0) return "B";
         if (grade >= 4.0) return "D";
         return "F";
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
     }
 }
