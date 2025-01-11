@@ -1,17 +1,11 @@
 package com.example.studentinformation.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@Data
 @Entity
 @Table(name = "student_score_t")
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class StudentScore {
 
     @Id

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface StudentScoreRepository extends JpaRepository<StudentScore, Long> {
+public interface StudentScoreRepository extends JpaRepository<StudentScore, Integer> {
     void deleteByStudentScoreId(int id);
     StudentScore findByStudentScoreId(int id);
 }
